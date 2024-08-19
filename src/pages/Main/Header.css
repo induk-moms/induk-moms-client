@@ -1,0 +1,23 @@
+#main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 1em 1em 1em 2em;
+}
+
+#main-header-logo {
+  width: 3em;
+  height: auto;
+  margin-right: 2em;
+}
+
+#main-header-select {
+  width: 5em;
+  min-width: fit-content;
+  font-size: 0.8em;
+}
+
+#main-header-select svg {
+  margin: -6px;
+}
