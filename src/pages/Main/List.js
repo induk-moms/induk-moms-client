@@ -1,20 +1,20 @@
-import Header from './Header'
-import Top3 from './Top3'
-import List from './List'
-import './Main.css'
+import './List.css'
 import { ClickIcon } from '../../assets'
 
-function Main() {
+function List() {
   return (
-    <div id="main-page-wrapper">
-      <Header />
-      <Top3 />
-      <List />
+    <div id="main-list-wrapper">
+      <ListElem />
+      <ListElem />
+      <ListElem />
+      <ListElem />
+      <ListElem />
+      <ListElem />
     </div>
   )
 }
 
-export default Main
+export default List
 
 function ListElem() {
   return (
