@@ -19,26 +19,20 @@ function Quiz() {
           <Link to="/detail">
             <LeftIcon />{' '}
           </Link>
-          <div>IGRUS</div>
+          <div>코딩 마스터즈</div>
           <QuestionIcon />
         </div>
         <div id="quiz-title">QUIZ</div>
-        <div id="quiz-subscript">
-          다음 중 자바스크립트에서 비동기 처리를 위한 방법이 아닌 것은
-          무엇인가요?
-        </div>
+        <div id="quiz-subscript">다음 중 자바스크립트의 특성이 아닌 것은?</div>
 
         <ChoiceElem type={choice == 1} onClick={() => setChoice(1)}>
-          promise
+          비동기 처리 가능
         </ChoiceElem>
         <ChoiceElem type={choice == 2} onClick={() => setChoice(2)}>
-          async/await
+          함수형 프로그래밍 지원
         </ChoiceElem>
         <ChoiceElem type={choice == 3} onClick={() => setChoice(3)}>
-          XMLHttpRequest
-        </ChoiceElem>
-        <ChoiceElem type={choice == 4} onClick={() => setChoice(4)}>
-          forEach
+          정적 타입 언어
         </ChoiceElem>
       </div>
 

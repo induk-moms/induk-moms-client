@@ -14,6 +14,7 @@ function Search() {
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && inputValue.trim() !== '') {
+      e.preventDefault()
       setItems([...items, inputValue]) // 배열에 입력 값 추가
       setInputValue('') // 입력 필드 비우기
     }
@@ -37,7 +38,7 @@ function Search() {
                 placeholder="# 해시태그를 입력해주세요"
                 value={inputValue}
                 onChange={handleInputChange}
-                onKeyDown={handleKeyDown}
+                onKeyUp={handleKeyDown}
                 handleKeyDown={handleKeyDown}
               />
               <BlackSearchIcon id="search-black-icon" />

@@ -11,13 +11,15 @@ function Detail() {
         <Link to="/">
           <LeftIcon />
         </Link>
-        <div>IGRUS</div>
+        <div>코딩 마스터즈</div>
         <Link to="/quiz">
           <EnterIcon />
         </Link>
       </div>
       <div className="detail-content-wrapper" id="detail-one-line">
-        💡 인하대 교내 최대 규모 개발 동아리입니다
+        <div style={{ fontSize: '0.9em' }}>
+          💡 코딩 실력 향상에 최고지만 정치적 분위기가 아쉬운 동아리
+        </div>
       </div>
 
       <Info />

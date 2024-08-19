@@ -22,7 +22,7 @@ function Top3() {
         </div>
         <div className="club-rank-title">
           <div>Top3</div>
-          <div>CTP</div>
+          <div>UMC</div>
         </div>
       </div>
     </div>
