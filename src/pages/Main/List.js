@@ -1,5 +1,6 @@
 import './List.css'
 import { ClickIcon } from '../../assets'
+import { Link } from 'react-router-dom'
 
 function List() {
   return (
@@ -32,7 +33,9 @@ function ListElem() {
           <ListTag tag="인하대" />
         </div>
       </div>
-      <ClickIcon className="listelem-btn " />
+      <Link className="listelem-btn " to="/detail">
+        <ClickIcon />
+      </Link>
     </div>
   )
 }
