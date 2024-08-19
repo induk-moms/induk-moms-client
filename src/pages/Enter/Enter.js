@@ -19,13 +19,11 @@ function Enter() {
           <Link to="/detail">
             <LeftIcon />{' '}
           </Link>
-          <div>IGRUS</div>
+          <div>코딩 마스터즈</div>
           <QuestionIcon />
         </div>
 
-        <div id="enter-one-line">
-          💡 인하대 교내 최대 규모 개발 동아리입니다
-        </div>
+        <div id="enter-one-line">💡 코딩으로 성장하자</div>
 
         <div className="enter-question">✔️ 지원 동기를 작성해주세요</div>
         <textarea

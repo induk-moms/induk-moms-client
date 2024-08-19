@@ -9,9 +9,10 @@ function Info() {
           <DetailTag>인하대</DetailTag>
         </div>
       </DetailElem>
-      <DetailElem title="인원수">50명</DetailElem>
-      <DetailElem title="소개">
-        해킹, 웹/앱 개발, 협업 경험을 얻을 수 있는 매우 좋은 동이리입니다
+      <DetailElem title="인원수">150명</DetailElem>
+      <DetailElem title="소개" className="description-width">
+        코딩에 관심 있는 학생들을 위한 동아리로, 다양한 프로그래밍 언어와
+        알고리즘 문제를 다룹니다.
       </DetailElem>
     </div>
   )
@@ -19,9 +20,9 @@ function Info() {
 
 export default Info
 
-function DetailElem({ title, children }) {
+function DetailElem({ title, children, className }) {
   return (
-    <div className={`detail-elem-wrapper`}>
+    <div className={`detail-elem-wrapper ${className ? className : ''}`}>
       <div className="detail-elem-title">{title}</div>
       <div className="detail-elem-content">{children}</div>
     </div>

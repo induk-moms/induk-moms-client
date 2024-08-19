@@ -4,13 +4,13 @@ import List from './List'
 import './Main.css'
 import { NavBar } from '../../components'
 
-function Main() {
+function Main({ clubList }) {
   return (
     <>
       <div id="main-page-wrapper">
         <Header />
         <Top3 />
-        <List />
+        <List clubLis={clubList} />
       </div>
       <NavBar />
     </>

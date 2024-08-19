@@ -20,12 +20,16 @@ function Review() {
           />
         </div>
       </DetailElem>
-      <DetailElem title="리뷰요약">
+      {/* <DetailElem title="리뷰요약">
         <div>회비가 아깝지만 개발 배우기 좋은 군기 없는 좋은 동아리</div>
-      </DetailElem>
+      </DetailElem> */}
       {/* <hr /> */}
 
       <div id="review-wrapper">
+        {data.map((elem, idx) => (
+          <ReviewElem key={idx} data={elem} />
+        ))}
+        {/* <ReviewElem />
         <ReviewElem />
         <ReviewElem />
         <ReviewElem />
@@ -34,8 +38,7 @@ function Review() {
         <ReviewElem />
         <ReviewElem />
         <ReviewElem />
-        <ReviewElem />
-        <ReviewElem />
+        <ReviewElem /> */}
       </div>
     </div>
   )
@@ -52,12 +55,48 @@ function DetailElem({ title, children }) {
   )
 }
 
-function ReviewElem({ children }) {
+function ReviewElem({ children, data }) {
   return (
     <div className="review-elem-wrapper">
-      <div>⭐️⭐️⭐️⭐️⭐️</div>
-      <div className="review-writer">23년 1학기 동아리원</div>
-      <div>군기도 없이 아주 좋은 분위기입니다</div>
+      <div>{data.star}</div>
+      <div className="review-writer">{data.writer}</div>
+      <div>{data.review}</div>
     </div>
   )
 }
+
+const data = [
+  {
+    star: '⭐️⭐️⭐️⭐️⭐️',
+    writer: '23년 1학기 동아리원',
+    review:
+      '군기도 없이 아주 좋은 분위기라서 좋았어요!. 3학년 1학기에 늦게 들어왔는데도, 1학년 학우들도 살갑게 대해주고 전체적으로 좋은 분위기에서 동아리 생활을 할 수 있었습니다. 추천!',
+  },
+  {
+    star: '⭐️⭐️⭐',
+    writer: '22년 2학기 동아리원',
+    review:
+      '군기가 너무 많아요 ㅠㅠ 고인물이 많은 느낌이지만 그래도 개발 처음 배우는 사람에게는 추천합니다.',
+  },
+  {
+    star: '⭐️⭐️⭐️⭐️',
+    writer: '21년 1학기 동아리원',
+    review: '회비가 아깝지만 개발 배우기 좋은 동아리',
+  },
+  {
+    star: '⭐️⭐️⭐️',
+    writer: '20년 2학기 동아리원',
+    review:
+      '좋은 분위기지만 개발에 대한 열정이 부족해요 가끔 팀원 잘못 만나면 힘들지만 이건 뭐 어느 동아리나 마찬가지겠죠',
+  },
+  {
+    star: '⭐️⭐️⭐️⭐️⭐️',
+    writer: '20년 1학기 동아리원',
+    review: '좋은 분위기와 열정이 넘치는 동아리입니다! 알고리즘 스터디 강추',
+  },
+  {
+    star: '⭐️⭐️⭐️⭐️',
+    writer: '19년 2학기 동아리원',
+    review: '좋은 분위기와 열정이 넘치는 동아리입니다',
+  },
+]

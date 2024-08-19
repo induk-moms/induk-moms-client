@@ -64,3 +64,9 @@
 .club-top1-wrapper {
   margin-top: -1.5em;
 }
+
+.club-rank-title div:last-child {
+  font-size: 0.9em;
+  margin-top: 0.3em;
+  font-weight: bold;
+}
