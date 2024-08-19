@@ -6,9 +6,11 @@ import {
   SearchIcon,
 } from '../assets'
 import './NavBar.css'
+import { Link, useLocation } from 'react-router-dom'
 
 function NavBar() {
-  const [active, setActive] = useState(1)
+  const location = useLocation()
+  const [active, setActive] = useState(location.pathname === '/search' ? 2 : 1)
 
   return (
     <div id="navbar-wrapper">
@@ -16,11 +18,15 @@ function NavBar() {
         {active === 1 ? (
           <>
             <ActiveGoodIcon />
-            <SearchIcon onClick={() => setActive(2)} />
+            <Link to="/search">
+              <SearchIcon onClick={() => setActive(2)} />
+            </Link>
           </>
         ) : (
           <>
-            <GoodIcon onClick={() => setActive(1)} />
+            <Link to="/">
+              <GoodIcon onClick={() => setActive(1)} />
+            </Link>
             <ActiveSearchIcon />
           </>
         )}
