@@ -1,0 +1,28 @@
+#enter-one-line {
+  border: 1px solid #9e9e9e;
+  margin: 0 1em;
+  padding: 0.5em 0;
+  border-radius: 10px;
+  font-size: 0.9em;
+  margin-bottom: 1em;
+}
+
+.enter-question {
+  text-align: justify;
+  margin-left: 1em;
+  font-size: 0.9em;
+}
+
+.enter-answer {
+  /* text-align: justify;
+  font-size: 0.9em;
+  margin-bottom: 1em;
+  width: 2em; */
+  width: calc(100% - 4em) !important;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  background: #f7f7f7;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 10px;
+}

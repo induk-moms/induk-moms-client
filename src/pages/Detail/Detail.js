@@ -12,7 +12,9 @@ function Detail() {
           <LeftIcon />
         </Link>
         <div>IGRUS</div>
-        <EnterIcon />
+        <Link to="/quiz">
+          <EnterIcon />
+        </Link>
       </div>
       <div className="detail-content-wrapper" id="detail-one-line">
         💡 인하대 교내 최대 규모 개발 동아리입니다
