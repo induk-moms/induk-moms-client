@@ -1,8 +1,27 @@
 import './List.css'
 import { ClickIcon } from '../../assets'
 import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 
 function List() {
+  // get api : clubs
+  const [clubList, setClubList] = useState([])
+
+  useEffect(() => {
+    fetch(process.env.REACT_APP_URL + '/api/clubs', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + process.env.REACT_APP_TOKEN,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setClubList(data.result)
+        console.log(clubList)
+      })
+  }, [])
+
   console.log(clubList)
   return (
     <div id="main-list-wrapper">
@@ -32,12 +51,13 @@ function ListElem({ clubList, idx }) {
           {/* <ListTag tag="개발" />
           <ListTag tag="해커톤" />
           <ListTag tag="인하대" /> */}
-          {clubList.hashtags.map((tag) => (
+          {/* {clubList.hashtags.map((tag) => (
             <ListTag tag={tag} />
-          ))}
+          ))} */}
+          <div>{clubList.hashtags}</div>
         </div>
       </div>
-      <Link className="listelem-btn " to="/detail">
+      <Link className="listelem-btn " to="/detail" state={clubList}>
         <ClickIcon />
       </Link>
     </div>
