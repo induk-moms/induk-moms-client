@@ -1,18 +1,23 @@
-function Info() {
+function Info({ club }) {
+  // pasring : #a #b #c -> ['a', 'b', 'c']
+  const tags = club.hashtags.split(' ').map((tag) => tag.slice(1))
+
   return (
     <div className="detail-content-wrapper">
       <DetailElem title="동아리 소속">인하대학교</DetailElem>
       <DetailElem title="유형">
         <div id="detail-tag-wrapper">
-          <DetailTag>개발</DetailTag>
+          {/* <DetailTag>개발</DetailTag>
           <DetailTag>해커톤</DetailTag>
-          <DetailTag>인하대</DetailTag>
+          <DetailTag>인하대</DetailTag> */}
+          {tags.map((tag) => (
+            <DetailTag key={tag}>{tag}</DetailTag>
+          ))}
         </div>
       </DetailElem>
-      <DetailElem title="인원수">150명</DetailElem>
+      <DetailElem title="인원수">{club.ratingCount}명</DetailElem>
       <DetailElem title="소개" className="description-width">
-        코딩에 관심 있는 학생들을 위한 동아리로, 다양한 프로그래밍 언어와
-        알고리즘 문제를 다룹니다.
+        {club.description}
       </DetailElem>
     </div>
   )

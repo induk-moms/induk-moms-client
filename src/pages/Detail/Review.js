@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Modal from '../../components/Modal'
 
-function Review() {
+function Review({ club }) {
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const type = 'review'
 
@@ -9,7 +9,7 @@ function Review() {
     <div className="detail-content-wrapper" id="detail-content-wrapper-last">
       <DetailElem title="별점">
         <div id="review-write-title">
-          <div>⭐️ 4.8</div>
+          <div>⭐️ {club.starRating}</div>
           <div id="review-write-btn" onClick={() => setModalIsOpen(true)}>
             리뷰 작성
           </div>

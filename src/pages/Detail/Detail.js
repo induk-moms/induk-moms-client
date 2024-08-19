@@ -3,27 +3,29 @@ import { EnterIcon, LeftIcon } from '../../assets'
 import './Detail.css'
 import Review from './Review'
 import Info from './Info'
+import { useLocation } from 'react-router-dom'
 
 function Detail() {
+  const location = useLocation()
+  const { club } = location.state || {} // state가 undefined일 수 있으니 기본값 설정
+
   return (
     <div id="detail-page-wrapper">
       <div id="detail-header">
         <Link to="/">
           <LeftIcon />
         </Link>
-        <div>코딩 마스터즈</div>
+        <div>{club.name}</div>
         <Link to="/quiz">
           <EnterIcon />
         </Link>
       </div>
       <div className="detail-content-wrapper" id="detail-one-line">
-        <div style={{ fontSize: '0.9em' }}>
-          💡 코딩 실력 향상에 최고지만 정치적 분위기가 아쉬운 동아리
-        </div>
+        <div style={{ fontSize: '0.9em' }}>💡 {club.description}</div>
       </div>
 
-      <Info />
-      <Review />
+      <Info club={club} />
+      <Review club={club} />
     </div>
   )
 }

@@ -38,6 +38,8 @@ function List() {
 export default List
 
 function ListElem({ clubList, idx }) {
+  const tags = clubList.hashtags.split(' ').map((tag) => tag.slice(1))
+
   return (
     <div className="listelem-wrapper">
       <div className="listelem-rank">{idx + 3}</div>
@@ -51,13 +53,13 @@ function ListElem({ clubList, idx }) {
           {/* <ListTag tag="개발" />
           <ListTag tag="해커톤" />
           <ListTag tag="인하대" /> */}
-          {/* {clubList.hashtags.map((tag) => (
+          {tags.map((tag) => (
             <ListTag tag={tag} />
-          ))} */}
-          <div>{clubList.hashtags}</div>
+          ))}
+          {/* <div>{clubList.hashtags}</div> */}
         </div>
       </div>
-      <Link className="listelem-btn " to="/detail" state={clubList}>
+      <Link className="listelem-btn " to="/detail" state={{ club: clubList }}>
         <ClickIcon />
       </Link>
     </div>
