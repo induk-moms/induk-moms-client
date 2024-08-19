@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
-import { Main } from './pages'
+import { Main, Detail } from './pages'
 import './App.css'
 
 function App() {
@@ -7,6 +7,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<Main />} />
+        <Route path="/detail" element={<Detail />} />
       </Routes>
     </div>
   )
