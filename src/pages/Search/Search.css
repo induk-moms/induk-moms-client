@@ -1,0 +1,65 @@
+#search-page-wrapper {
+  height: calc(100vh - 4.5em);
+  display: flex;
+  flex-direction: column;
+  background: #f7f7f7;
+
+  background-image: url('../../assets/img_search_background.svg'); /* 배경 이미지 URL */
+  background-size: cover; /* 배경 이미지를 div의 크기에 맞게 조정 */
+  background-position: center; /* 배경 이미지를 가운데로 정렬 */
+  background-size: contain; /* 배경 이미지를 div의 너비에 맞게 조정 */
+  background-repeat: no-repeat; /* 이미지를 반복하지 않도록 설정 */
+  background-position: center; /* 배경 이미지를 가운데로 정렬 */
+}
+
+#search-logo {
+  margin: 2em;
+  margin-bottom: 1em;
+}
+
+#search-page-wrapper input {
+  width: calc(100% - 4em);
+  height: 2.4em;
+  border: 1px solid #e0e0e0;
+  border-radius: 1em;
+  padding-left: 1em;
+  margin-bottom: 1em;
+  align-self: center;
+}
+
+#search-page-search-wrapper {
+  display: flex;
+}
+
+#search-container {
+  position: relative;
+  display: inline-block;
+}
+
+#search-black-icon {
+  position: absolute;
+  transform: translateX(-150%);
+  margin-top: 0.3em;
+}
+
+/*  */
+#search-tag-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 2em;
+  margin-bottom: 0.3em;
+}
+
+.search-tag-elem {
+  background: #f7f7f7;
+  border: 1px solid #e0e0e0;
+  border-radius: 1em;
+  padding: 0.5em 1em;
+  margin-right: 0.2em;
+
+  margin-top: 0.3em;
+  display: flex;
+  align-items: center;
+
+  font-size: 0.8em;
+}
