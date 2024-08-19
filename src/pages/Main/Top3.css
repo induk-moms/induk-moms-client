@@ -1,0 +1,66 @@
+#club-list-top3 {
+  margin: 0em 1em;
+  height: 12em;
+  border-radius: 10px;
+  background-image: url('../../assets/img_top3_background.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  display: flex;
+  flex-direction: column;
+  min-height: fit-content;
+  height: fit-content;
+}
+
+#club_top1 {
+  margin-top: 1em;
+  margin-bottom: -1em;
+  align-self: center;
+  width: 4em;
+  height: auto;
+}
+
+#club-top23 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0em 3em;
+  margin-bottom: 0.4em;
+}
+
+#club-top23 svg {
+  width: 3em;
+  height: auto;
+}
+
+#club_top1_title {
+  width: fit-content;
+  align-self: center;
+  justify-content: center;
+  background: #fff;
+}
+
+#club_top1_title {
+  margin-top: -2em;
+  width: 30%;
+  height: 2em;
+  background: #fff;
+  border-radius: 1em 1em 0em 0em;
+}
+
+#club_top23_title {
+  display: flex;
+  background: #fff;
+  border-radius: 1em 1em 0em 0em;
+  padding-top: 0.5em;
+  padding-bottom: 1em;
+}
+
+#club_top23_title div {
+  flex: 1;
+  border-radius: 1em 1em 0em 0em;
+}
+
+.club-top1-wrapper {
+  margin-top: -1.5em;
+}
