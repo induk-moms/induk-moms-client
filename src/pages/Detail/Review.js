@@ -1,10 +1,23 @@
+import React, { useState } from 'react'
+import Modal from '../../components/Modal'
+
 function Review() {
+  const [modalIsOpen, setModalIsOpen] = useState(false)
+  const type = 'review'
+
   return (
     <div className="detail-content-wrapper" id="detail-content-wrapper-last">
       <DetailElem title="별점">
         <div id="review-write-title">
           <div>⭐️ 4.8</div>
-          <div id="review-write-btn">리뷰 작성</div>
+          <div id="review-write-btn" onClick={() => setModalIsOpen(true)}>
+            리뷰 작성
+          </div>
+          <Modal
+            type={type}
+            modalIsOpen={modalIsOpen}
+            setModalIsOpen={setModalIsOpen}
+          />
         </div>
       </DetailElem>
       <DetailElem title="리뷰요약">
