@@ -2,7 +2,7 @@ import Header from './Header'
 import Top3 from './Top3'
 import List from './List'
 import './Main.css'
-import { ActiveGoodIcon, ClickIcon, SearchIcon } from '../../assets'
+import { NavBar } from '../../components'
 
 function Main() {
   return (
@@ -12,12 +12,7 @@ function Main() {
         <Top3 />
         <List />
       </div>
-      <div id="navbar-wrapper">
-        <div id="navbar-btns-wrapper">
-          <ActiveGoodIcon />
-          <SearchIcon />
-        </div>
-      </div>
+      <NavBar />
     </>
   )
 }
