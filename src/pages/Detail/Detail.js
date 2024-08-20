@@ -9,6 +9,8 @@ function Detail() {
   const location = useLocation()
   const { club } = location.state || {} // state가 undefined일 수 있으니 기본값 설정
 
+  console.log('detail', club)
+
   return (
     <div id="detail-page-wrapper">
       <div id="detail-header">

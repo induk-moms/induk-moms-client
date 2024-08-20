@@ -1,9 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Modal from '../../components/Modal'
 
 function Review({ club }) {
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const type = 'review'
+
+  const [reviews, setReviews] = useState([])
+  useEffect(() => {
+    fetch(process.env.REACT_APP_URL + '/api/44/reviews', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: 'Bearer ' + process.env.REACT_APP_TOKEN,
+      },
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        setReviews(data.result)
+        console.log(reviews)
+      })
+  }, [])
 
   return (
     <div className="detail-content-wrapper" id="detail-content-wrapper-last">
@@ -26,7 +42,7 @@ function Review({ club }) {
       {/* <hr /> */}
 
       <div id="review-wrapper">
-        {data.map((elem, idx) => (
+        {reviews.map((elem, idx) => (
           <ReviewElem key={idx} data={elem} />
         ))}
         {/* <ReviewElem />
@@ -56,11 +72,14 @@ function DetailElem({ title, children }) {
 }
 
 function ReviewElem({ children, data }) {
+  const round = Math.round(data.rating)
+  const star = '⭐️'.repeat(round)
+
   return (
     <div className="review-elem-wrapper">
-      <div>{data.star}</div>
-      <div className="review-writer">{data.writer}</div>
-      <div>{data.review}</div>
+      <div>{star}</div>
+      <div className="review-writer">{data.term}</div>
+      <div>{data.contents}</div>
     </div>
   )
 }
