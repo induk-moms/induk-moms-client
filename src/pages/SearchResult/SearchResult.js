@@ -141,7 +141,7 @@ function SliderWrapper({ data }) {
         </SliderInfo>
       </div>
 
-      <Link to={`/detail`} state={{ club: data }}>
+      <Link to={`/detail`} state={{ clubId: data.clubId }}>
         <BlueClickIcon id="bluc-click-icon" />
       </Link>
     </div>
