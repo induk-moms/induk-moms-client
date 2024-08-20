@@ -5,7 +5,33 @@ function Review({ club }) {
   const [modalIsOpen, setModalIsOpen] = useState(false)
   const type = 'review'
 
+  const [reviewsDisplay, setReviewsDisplay] = useState('none')
+
   const [reviews, setReviews] = useState([])
+
+  const [starRating, setRank] = useState(0)
+  const [review, setReview] = useState('')
+
+  const handleReviewSubmit = () => {
+    fetch(
+      process.env.REACT_APP_URL +
+        `/api/v1/review/add/44/1?starRating=${starRating}&reviewText=${review}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: 'Bearer ' + process.env.REACT_APP_TOKEN,
+        },
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data)
+      })
+
+    setReviewsDisplay('none')
+  }
+
   useEffect(() => {
     fetch(process.env.REACT_APP_URL + '/api/44/reviews', {
       method: 'GET',
@@ -17,7 +43,7 @@ function Review({ club }) {
       .then((res) => res.json())
       .then((data) => {
         setReviews(data.result)
-        console.log(reviews)
+        console.log('review data', data.result)
       })
   }, [])
 
@@ -26,10 +52,15 @@ function Review({ club }) {
       <DetailElem title="별점">
         <div id="review-write-title">
           <div>⭐️ {club.starRating}</div>
-          <div id="review-write-btn" onClick={() => setModalIsOpen(true)}>
+          <div
+            id="review-write-btn"
+            onClick={() => setReviewsDisplay('visible')}
+          >
             리뷰 작성
           </div>
+
           <Modal
+            club={club}
             type={type}
             modalIsOpen={modalIsOpen}
             setModalIsOpen={setModalIsOpen}
@@ -40,6 +71,21 @@ function Review({ club }) {
         <div>회비가 아깝지만 개발 배우기 좋은 군기 없는 좋은 동아리</div>
       </DetailElem> */}
       {/* <hr /> */}
+
+      <div className={`${reviewsDisplay == 'none' ? 'disable' : ''}`}>
+        <div>✏️ 리뷰 작성</div>
+        <input
+          type="text"
+          placeholder="별점"
+          onChange={(e) => setRank(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="리뷰 내용"
+          onChange={(e) => setReview(e.target.value)}
+        />
+        <div onClick={handleReviewSubmit}>제출</div>
+      </div>
 
       <div id="review-wrapper">
         {reviews.map((elem, idx) => (

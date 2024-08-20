@@ -1,14 +1,36 @@
 import Modal from 'react-modal'
 import ReviewModal from './Modal/ReviewModal'
 
-function ModalCustom({ type, modalIsOpen, setModalIsOpen }) {
+function ModalCustom({
+  type,
+  modalIsOpen,
+  setModalIsOpen,
+  club,
+  setRating,
+  setReview,
+  handleReviewSubmit,
+  setSubmitBtn,
+}) {
+  console.log('modal', club)
+
   return (
     <Modal
       isOpen={modalIsOpen}
       onRequestClose={() => setModalIsOpen(false)}
       style={customStyles}
     >
-      {type === 'review' ? <ReviewModal /> : <div>Modal</div>}
+      {type === 'review' ? (
+        <ReviewModal
+          setSubmitBtn={setSubmitBtn}
+          club={club}
+          setRating={setRating}
+          setReview={setReview}
+          handleReviewSubmit={handleReviewSubmit}
+          setModalIsOpen={setModalIsOpen}
+        />
+      ) : (
+        <div>Modal</div>
+      )}
     </Modal>
   )
 }

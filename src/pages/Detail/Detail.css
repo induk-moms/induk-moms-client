@@ -96,3 +96,7 @@
   border-radius: 3px;
   padding: 3px 10px;
 }
+
+.disable {
+  display: none;
+}
