@@ -72,7 +72,11 @@ function Review({ club }) {
       </DetailElem> */}
       {/* <hr /> */}
 
-      <div className={`${reviewsDisplay == 'none' ? 'disable' : ''}`}>
+      <div
+        className={`review-write-wrapper ${
+          reviewsDisplay == 'none' ? 'disable' : ''
+        }`}
+      >
         <div>✏️ 리뷰 작성</div>
         <input
           type="text"
@@ -84,7 +88,9 @@ function Review({ club }) {
           placeholder="리뷰 내용"
           onChange={(e) => setReview(e.target.value)}
         />
-        <div onClick={handleReviewSubmit}>제출</div>
+        <div id="submit-last" onClick={handleReviewSubmit}>
+          제출
+        </div>
       </div>
 
       <div id="review-wrapper">
