@@ -46,7 +46,7 @@ function Enter() {
         ></textarea>
       </div>
 
-      <Link id="quiz-send-btn" to="/detail">
+      <Link id="quiz-send-btn" to="/detail" state={{ club: club }}>
         <SendIcon />
         <div>동아리 신청</div>
       </Link>
