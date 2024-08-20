@@ -16,7 +16,7 @@ function Detail() {
           <LeftIcon />
         </Link>
         <div>{club.name}</div>
-        <Link to="/quiz">
+        <Link to="/quiz" state={{ club: club }}>
           <EnterIcon />
         </Link>
       </div>

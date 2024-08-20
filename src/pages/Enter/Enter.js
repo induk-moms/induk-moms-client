@@ -8,15 +8,19 @@ import {
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import './Enter.css'
+import { useLocation } from 'react-router-dom'
 
 function Enter() {
   const [choice, setChoice] = useState(0)
+
+  const location = useLocation()
+  const { club } = location.state || {} // state가 undefined일 수 있으니 기본값 설정
 
   return (
     <div id="quiz-page-wrapper" style={{ background: '#fff' }}>
       <div id="quiz-content-wrapper">
         <div id="quiz-content-header">
-          <Link to="/detail">
+          <Link to="/detail" state={{ club: club }}>
             <LeftIcon />{' '}
           </Link>
           <div>코딩 마스터즈</div>
